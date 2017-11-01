@@ -20,7 +20,10 @@
 <link href="<c:url value="/resources/css/business-casual.css" />"
 	rel="stylesheet" >
 	
-	
+	<!-- Main CSS -->
+<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet"> 
+
+
 	<!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
 	rel="stylesheet" type="text/css">
@@ -34,10 +37,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<!-- Main CSS
-<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet"> 
-
--->
 
 
 </head>
@@ -66,7 +65,10 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="<c:url value="/admin/" />">Admin</a></li>
+                        <li><a href="<c:url value="/register/" />">Register</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="<c:url value="/admin/" />">Login</a></li>
                     </ul>
                 </div>
             </div>
