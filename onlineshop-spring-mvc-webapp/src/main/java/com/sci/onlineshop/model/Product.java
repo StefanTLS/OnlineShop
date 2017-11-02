@@ -16,7 +16,7 @@ public class Product {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int productId;
+	private long productId;
 	
 	@NotNull(message = "The product name must have between 2 and 14 characters.")
 	@Size(min = 2, max = 14)
@@ -36,11 +36,11 @@ public class Product {
     @Transient
     private MultipartFile productImage;
 
-    public int getProductId() {
+    public long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId(long productId) {
 		this.productId = productId;
 	}
 

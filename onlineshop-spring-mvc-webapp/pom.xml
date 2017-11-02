@@ -100,7 +100,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.0.3.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -116,23 +116,35 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>4.2.3.RELEASE</version>
 		</dependency>
-		<!-- Error prone, if multiple validation jars  
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency> -->
-		<!-- 
-		<dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
-			<version>2.9.2</version> </dependency> 
-			<dependency> <groupId>com.fasterxml.jackson.core</groupId> 
-			<artifactId>jackson-annotations</artifactId> <version>2.9.2</version> </dependency> 
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.2.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!-- Error-prone, if multiple validation jars <dependency> <groupId>javax.validation</groupId> 
+			<artifactId>validation-api</artifactId> <version>1.0.0.GA</version> </dependency> -->
 			
-			<dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
-			<version>2.9.2</version> </dependency> <dependency> <groupId>org.springframework.webflow</groupId> 
-			<artifactId>spring-webflow</artifactId> <version>2.4.6.RELEASE</version> 
-			</dependency> <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
-			<version>1.7.25</version> </dependency> <dependency> <groupId>org.slf4j</groupId> 
-			<artifactId>slf4j-log4j12</artifactId> <version>1.7.25</version> </dependency> -->
+		<!-- <dependency> <groupId>org.springframework.webflow</groupId> <artifactId>spring-webflow</artifactId> 
+			<version>2.4.6.RELEASE</version> </dependency>
+			<dependency> <groupId>org.slf4j</groupId> 
+			<artifactId>slf4j-api</artifactId> <version>1.7.25</version> </dependency> 
+			
+			<dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>1.7.25</version> </dependency> -->
 	</dependencies>
 </project>

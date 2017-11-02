@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="category">Category</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="instrument" />Instrument</label>
+                                                             value="picture" />Picture</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
                                                              value="record" />Record</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <label for="price">Price</label> <form:errors path="productPrice" cssStyle="color: #ff0000;" />
+            <label for="price">Price in EUR</label> <form:errors path="productPrice" cssStyle="color: #ff0000;" />
             <form:input path="productPrice" id="price" class="form-Control" value="${product.productPrice}"/>
         </div>
 

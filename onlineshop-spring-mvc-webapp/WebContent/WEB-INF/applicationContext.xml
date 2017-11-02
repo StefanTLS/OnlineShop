@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security 
+	   http://www.springframework.org/schema/security/spring-security.xsd">
 <!-- 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/security 
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/security 
 		http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/webflow-config 
 		http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd
@@ -52,6 +57,32 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="2048000" />
     </bean>
+    
+     <security:http auto-config="true" use-expressions="true">
+    	<security:csrf
+        	 disabled="true"/>
+     	<security:intercept-url pattern="/login" access="permitAll"/>
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')" />
+        <security:form-login
+        	login-processing-url="/j_spring_security_check"
+            login-page="/login"
+            default-target-url="/admin/"
+            authentication-failure-url="/login?login_error=1"
+            username-parameter="username"
+            password-parameter="password" />
+        <security:logout        
+        	 logout-url="/j_spring_security_logout" 
+        	 logout-success-url="/"  />
+        
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="dataSource"
+                                        authorities-by-username-query="SELECT username, authority FROM authorities WHERE username = ?"
+                                        users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
+        </security:authentication-provider>
+    </security:authentication-manager>
    
 </beans>
 
