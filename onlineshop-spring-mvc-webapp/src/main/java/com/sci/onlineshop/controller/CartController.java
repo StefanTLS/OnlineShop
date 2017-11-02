@@ -71,7 +71,7 @@ public class CartController {
     public void removeItem(@PathVariable long productId, HttpServletRequest request) {
         String sessionId = request.getSession(true).getId();
         Cart cart = cartDao.read(sessionId);
-
+ 
         if(cart == null) {
             cart = cartDao.create(new Cart(sessionId));
         }
