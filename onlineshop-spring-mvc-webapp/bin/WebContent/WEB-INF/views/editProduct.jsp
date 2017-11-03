@@ -7,9 +7,9 @@
         <div class="page-header">
             <h1>Edit Product</h1>
 
-            <p class="lead">Please update the product information here:</p>
+            <p class="lead">Edit the product information here:</p>
         </div>
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct" method="post"
+        <form:form action="${pageContext.request.contextPath}/admin/product/editProduct" method="post"
         
                    modelAttribute="product" enctype="multipart/form-data">
         <form:hidden path="productId" value="${product.productId}" />

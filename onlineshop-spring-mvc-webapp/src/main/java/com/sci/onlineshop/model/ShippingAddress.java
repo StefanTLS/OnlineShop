@@ -44,19 +44,12 @@ public class ShippingAddress implements Serializable{
         this.streetName = streetName;
     }
 
-
     public String getAdressNumber() {
         return adressNumber;
     }
 
     public void setAdressNumber(String adressNumber) {
         this.adressNumber = adressNumber;
-    public String getApartmentNumber() {
-        return adressNumber;
-    }
-
-    public void setApartmentNumber(String apartmentNumber) {
-        this.adressNumber = apartmentNumber;
     }
 
     public String getCity() {
