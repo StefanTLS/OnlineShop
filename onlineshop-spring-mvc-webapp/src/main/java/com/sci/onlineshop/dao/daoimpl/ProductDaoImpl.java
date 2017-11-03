@@ -12,62 +12,45 @@ import com.sci.onlineshop.model.Product;
 
 import java.util.List;
 
-
 @Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 
     @Autowired
     private SessionFactory sessionFactory;
-    
-    @Transactional
-	@Override
-	public void addProduct(Product product) {
-		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(product);
-		session.flush();
-		
-	}
-    
-    @Override
-	public void editProduct(Product product) {
-    	Session session = sessionFactory.getCurrentSession();
+
+    public Product getProductById (int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Product product = (Product) session.get(Product.class, id);
+        session.flush();
+
+        return product;
+    }
+
+    public List<Product> getProductList() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Product> query = session.createQuery("from Product");
+        List<Product> productList = query.list();
+        session.flush();
+
+        return productList;
+    }
+
+    public void addProduct (Product product) {
+        Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
         session.flush();
-		
-	}
+    }
 
-	@Override
-	public Product getProductById(long id) {
-		 Session session = sessionFactory.getCurrentSession();
-		 Product product = session.get(Product.class, id);
-		 session.flush();
-		 
-       	 return product;
-	}
+    public void editProduct (Product product) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(product);
+        session.flush();
+    }
 
-	@Override
-	public List<Product> getAllProducts() {
-		  Session session = sessionFactory.getCurrentSession();
-		  Query<Product> query = session.createQuery("from Product");
-		  List<Product> products = query.list();
-		  session.flush();
-
-		  return products;
-	}
-
-	@Override
-	public void deleteProduct(long id) {
-		Session session = sessionFactory.getCurrentSession();
-		session.delete(getProductById(id));
-		session.flush();
-		
-	}
-
-	
-
-	
-
-
-
+    public void deleteProduct (Product product) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(product);
+        session.flush();
+    }
 }

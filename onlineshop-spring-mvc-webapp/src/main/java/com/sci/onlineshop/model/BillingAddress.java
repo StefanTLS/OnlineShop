@@ -45,6 +45,14 @@ public class BillingAddress implements Serializable{
         this.streetName = streetName;
     }
 
+
+    public String getAdressNumber() {
+        return adressNumber;
+    }
+
+    public void setAdressNumber(String adressNumber) {
+        this.adressNumber = adressNumber;
+
     public String getApartmentNumber() {
         return adressNumber;
     }
