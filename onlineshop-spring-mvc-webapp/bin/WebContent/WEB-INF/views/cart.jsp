@@ -45,12 +45,12 @@
                     <th></th>
                     <th></th>
                     <th>Grand Total</th>
-                    <th>{{calGrandTotal()}}</th>
+                    <th>{{cart.grandTotal}}</th>
                     <th></th>
                 </tr>
             </table>
 
-            <a href="<spring:url value="/product/productList" />" class="btn btn-default">Keep Shopping</a>
+            <a href="<spring:url value="/productList" />" class="btn btn-default">Keep Shopping</a>
             </div>
         </section>
 
