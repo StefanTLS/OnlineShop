@@ -35,20 +35,20 @@
 					<h4>${product.productPrice}EUR</h4>
 					<br>
 					<c:set var="role" scope="page" value="${param.role}" />
-                    <c:set var="url" scope="page" value="/" />
-                    <c:if test="${role='admin'}">
-                        <c:set var="url" scope="page" value="/admin/productInventory" />
-                    </c:if>
+					<c:set var="url" scope="page" value="/productList" />
+					<c:if test="${role=='admin'}">
+						<c:set var="url" scope="page" value="/admin/productInventory" />
+					</c:if>
 
 					<p ng-controller="cartCtrl">
 						<a href="<c:url value="${url}" />" class="btn btn-default">Back</a>
-						
 						<a href="#" class="btn btn-warning btn-large"
 							ng-click="addToCart('${product.productId}')"> <span
 							class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
 						</a> 
-						<a href="<c:url value="/customer/cart"/>" class="btn btn-default"><span
+						<a href="<c:url value="/cart"/>" class="btn btn-default"><span
 							class="glyphicon glyphicon-hand-right"></span>View Cart</a>
+
 					</p>
 				</div>
 			</div>
