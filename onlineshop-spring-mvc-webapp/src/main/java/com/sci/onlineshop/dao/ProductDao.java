@@ -6,15 +6,16 @@ import org.springframework.stereotype.Repository;
 
 import com.sci.onlineshop.model.Product;
 
+@Repository
 public interface ProductDao {
 
-    List<Product> getProductList();
-
-    Product getProductById(int id);
-
     void addProduct(Product product);
-
+    
     void editProduct(Product product);
 
-    void deleteProduct(Product product);
+    Product getProductById(long id);
+
+    List<Product> getAllProducts();
+
+    void deleteProduct(long id);
 }

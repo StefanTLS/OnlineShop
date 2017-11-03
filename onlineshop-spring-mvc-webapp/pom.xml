@@ -54,19 +54,14 @@
 			<version>5.0.0.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.webflow</groupId>
-			<artifactId>spring-webflow</artifactId>
-			<version>2.4.6.RELEASE</version>
-		</dependency>
-		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.12.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -141,13 +136,15 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-
-
-		<!-- Error-prone, if there are multiple validation jars <dependency> <groupId>javax.validation</groupId> 
+		<!-- Error-prone, if multiple validation jars <dependency> <groupId>javax.validation</groupId> 
 			<artifactId>validation-api</artifactId> <version>1.0.0.GA</version> </dependency> -->
-
-		<!--<dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
-			<version>1.7.25</version> </dependency> <dependency> <groupId>org.slf4j</groupId> 
-			<artifactId>slf4j-log4j12</artifactId> <version>1.7.25</version> </dependency> -->
+			
+		<!-- <dependency> <groupId>org.springframework.webflow</groupId> <artifactId>spring-webflow</artifactId> 
+			<version>2.4.6.RELEASE</version> </dependency>
+			<dependency> <groupId>org.slf4j</groupId> 
+			<artifactId>slf4j-api</artifactId> <version>1.7.25</version> </dependency> 
+			
+			<dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>1.7.25</version> </dependency> -->
 	</dependencies>
 </project>

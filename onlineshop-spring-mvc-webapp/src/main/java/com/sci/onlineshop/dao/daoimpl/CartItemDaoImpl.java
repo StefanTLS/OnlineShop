@@ -1,8 +1,7 @@
 package com.sci.onlineshop.dao.daoimpl;
 
 import java.util.List;
-
-import javax.persistence.TypedQuery;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,42 +16,37 @@ import com.sci.onlineshop.model.CartItem;
 
 @Repository
 @Transactional
-public class CartItemDaoImpl implements CartItemDao {
+public class CartItemDaoImpl implements CartItemDao{
 
-	@Autowired
-	private SessionFactory sessionFactory;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-	@Override
-	public void addCartItem(CartItem cartItem) {
-		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(cartItem);
-		session.flush();
-	}
+    public void addCartItem(CartItem cartItem) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(cartItem);
+        session.flush();
+    }
 
-	@Override
-	public void removeCartItem(CartItem cartItem) {
-		Session session = sessionFactory.getCurrentSession();
-		session.delete(cartItem);
-		session.flush();
-	}
+    public void removeCartItem (CartItem cartItem) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(cartItem);
+        session.flush();
+    }
 
-	@Override
-	public void removeAllCartItems(Cart cart) {
-		List<CartItem> cartItems = cart.getCartItems();
+    public void removeAllCartItems(Cart cart) {
+        Map<String, CartItem> cartItems = cart.getCartItems();
 
-		for (CartItem item : cartItems) {
-			removeCartItem(item);
-		}
-	}
+        for (CartItem item : cartItems.values()) {
+            removeCartItem(item);
+        }
+    }
 
-	@Override
-	public CartItem getCartItemByProductId(int productId) {
-		Session session = sessionFactory.getCurrentSession();
-		Query<CartItem> query = session.createQuery("from CartItem where productId = ?");
-		query.setParameter(0, productId);
-		session.flush();
+    public CartItem getCartItemByProductId (int productId) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<CartItem> query = session.createQuery("from CartItem where productId = ?");
+        query.setParameter(0, productId);
+        session.flush();
 
-		return (CartItem) query.getSingleResult();
-	}
-
+        return (CartItem) query.uniqueResult();
+    }
 }
