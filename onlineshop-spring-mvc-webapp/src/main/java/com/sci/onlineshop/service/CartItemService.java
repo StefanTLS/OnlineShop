@@ -1,9 +1,9 @@
-package com.sci.onlineshop.dao;
+package com.sci.onlineshop.service;
 
 import com.sci.onlineshop.model.Cart;
 import com.sci.onlineshop.model.CartItem;
 
-public interface CartItemDao {
+public interface CartItemService {
 
 	void addCartItem(CartItem cartItem);
 
@@ -12,5 +12,4 @@ public interface CartItemDao {
 	void removeAllCartItems(Cart cart);
 
 	CartItem getCartItemByProductId(int productId);
-
 }

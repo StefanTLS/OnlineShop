@@ -6,12 +6,9 @@ import com.sci.onlineshop.model.Cart;
 
 public interface CartDao {
 
-   Cart create(Cart cart);
-   
-   Cart read(String cartId);
-   
-   void update(String cartId, Cart cart);
-   
-   void delete(String cartId);
-}
+	Cart getCartById(int cartId);
+	
+	 Cart validate(int cartId) throws IOException;
 
+	void update(Cart cart);
+}

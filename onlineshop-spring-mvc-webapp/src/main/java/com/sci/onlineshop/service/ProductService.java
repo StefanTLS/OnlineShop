@@ -1,12 +1,10 @@
-package com.sci.onlineshop.dao;
+package com.sci.onlineshop.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.sci.onlineshop.model.Product;
 
-public interface ProductDao {
+public interface ProductService {
 
     List<Product> getProductList();
 
