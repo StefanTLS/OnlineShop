@@ -18,7 +18,7 @@
 			value="jdbc:mysql://localhost:3306/spring_db?autoReconnect=true&amp;useSSL=false" />
 		<property name="username" value="devAdmin" />
 		<property name="password" value="admin1" />
-	</bean>
+	</bean> 
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
