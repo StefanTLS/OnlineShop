@@ -7,32 +7,41 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sci.onlineshop.model.Customer;
 import com.sci.onlineshop.model.Product;
+import com.sci.onlineshop.service.CustomerService;
 import com.sci.onlineshop.service.ProductService;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminHome {
 
-    @Autowired
-    private ProductService productService;
+	@Autowired
+	private ProductService productService;
 
-    @RequestMapping
-    public String adminPage() {
-        return "admin";
-    }
+	@Autowired
+	private CustomerService customerService;
 
-    @RequestMapping("/productInventory")
-    public String productInventory(Model model) {
-        List<Product> products = productService.getProductList();
-        model.addAttribute("products", products);
+	@RequestMapping
+	public String adminPage() {
+		return "admin";
+	}
 
-        return "productInventory";
-    }
+	@RequestMapping("/productInventory")
+	public String productInventory(Model model) {
+		List<Product> products = productService.getProductList();
+		model.addAttribute("products", products);
 
-    @RequestMapping("/customer")
-    public String customerManagement(Model model) {
+		return "productInventory";
+	}
 
-        return "customerManagement";
-    }
+	@RequestMapping("/customer")
+	public String customerManagement(Model model) {
+
+		List<Customer> customerList = customerService.getAllCustomers();
+		model.addAttribute("customerList", customerList);
+
+		return "customerManagement";
+	}
+
 }

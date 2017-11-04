@@ -50,9 +50,9 @@
 			</div>
 
 			<div class="form-group">
-				<label for="billingApartmentNumber">Adress Number</label>
-				<form:input path="billingAddress.apartmentNumber"
-					id="billingApartmentNumber" class="form-Control" />
+				<label for="billingAdressNumber">Adress Number</label>
+				<form:input path="billingAddress.adressNumber"
+					id="billingAdressNumber" class="form-Control" />
 			</div>
 
 			<div class="form-group">
@@ -89,9 +89,9 @@
 			</div>
 
 			<div class="form-group">
-				<label for="shippingApartmentNumber">Adress Number</label>
-				<form:input path="shippingAddress.apartmentNumber"
-					id="shippingApartmentNumber" class="form-Control" />
+				<label for="shippingAdressNumber">Adress Number</label>
+				<form:input path="shippingAddress.adressNumber"
+					id="shippingAdressNumber" class="form-Control" />
 			</div>
 
 			<div class="form-group">
